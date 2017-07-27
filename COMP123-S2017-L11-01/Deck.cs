@@ -8,15 +8,14 @@ using System.Text;
  * Date: July 25, 2017
  * Description: This is the Deck class
  * It inherits from the List generic and uses Card as the base
- * Version: 0.2 -- implemented the Iclonoeable interface
+ * Version: 0.3 -- Refactored to extend the CardList abstract class
  */
 namespace COMP123_S2017_L11_01
 {
-    public class Deck : List<Card>
+    public class Deck : CardList
     {
         // PRIVATE INSTANCE VARIABLES
         private Random _random;
-        private Face _face;
 
         // PRIVATE PROPERTITES
         private Random Random
@@ -27,26 +26,21 @@ namespace COMP123_S2017_L11_01
             }
         }
 
+        // PUBLIC PROPERTITES
+
         // CONSTRUCTORS
-        /// <summary>
-        /// This is the initialize methods
-        /// </summary>
-        public Deck()
-        {
-            this._initialize();
-        }
+
         // PRIVATE METHODS
 
-        private void _initialize()
+        protected override void _initialize()
         {
-            //initialize the presude random nunber generator
+            //initialize the presude-random nuMber generator
             this._random = new Random();
 
-            //this builts the Desk, fulls it with cards;
-
-            for(int suit = (int)(Suit.Clubs); suit<= (int)Suit.Spades; suit++)
+            //this builts the Desk, fills it with cards;
+            for(int suit = (int)Suit.Clubs; suit<= (int)Suit.Spades; suit++)
             {
-                for(int face = (int)(Face.Ace); face<= (int)Face.King; face++)
+                for(int face = (int)Face.Ace; face<= (int)Face.King; face++)
                 {
                     this.Add(new Card((Face)face, (Suit)suit));
                 }
@@ -54,9 +48,6 @@ namespace COMP123_S2017_L11_01
         }
 
         // PUBLIC METHODS
-
-
-
         public override string ToString()
         {
             string outputString = "";
@@ -68,7 +59,7 @@ namespace COMP123_S2017_L11_01
         }
 
         /// <summary>
-        /// This method shuffles the deck by using random indices 
+        /// This method shuffles the deck by using random indices to select two cards at a time
         /// </summary>
         public void Shuffle()
         {
@@ -78,22 +69,19 @@ namespace COMP123_S2017_L11_01
 
             for (int card = 0; card < this.Count; card++)
             {
-                firstCard = this.Random.Next(0,52);
-                secondCard = this.Random.Next(0, 52);
+                firstCard = this.Random.Next(0,this.Count);
+                secondCard = this.Random.Next(0, this.Count);
 
                 tempCard = (Card)this[secondCard].Clone();
-                Card.Overwrite(this[secondCard], this[firstCard]);
-                Face.Overwrite(this[secondCard], this[firstCard]);
 
-                this[secondCard].Face = this[firstCard].Face;
-                this[secondCard].Suit = this[firstCard].Suit;
-                this[firstCard].Face = tempCard.Face;
-                this[firstCard].Suit = tempCard.Suit;
+                Card.OverWrite(this[secondCard], this[firstCard]);
+                Card.OverWrite(this[secondCard], this[firstCard]);
+
+                //this[secondcard].face = this[firstcard].face;
+                //this[secondcard].suit = this[firstcard].suit;
+                //this[firstcard].face = tempcard.face;
+                //this[firstcard].suit = tempcard.suit;
             }
         }
-
-
-
-
     }
 }

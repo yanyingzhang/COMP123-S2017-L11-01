@@ -55,7 +55,9 @@ namespace COMP123_S2017_L11_01
             this.Face = face;
             this.Suit = suit;
         }
+        
         // PRIVATE METHODS
+        
         // PUBLIC METHODS
 
             /// <summary>
