@@ -7,7 +7,7 @@ using System.Text;
  * Name: Yanying Zhang
  * Date: July 27, 2017
  * Description: This is the Hand class which inherited from CardList
- * Version: 0.1 -- created the Hand Class
+ * Version: 0.2 -- modified the Hand Class
  */
 namespace COMP123_S2017_L11_01
 {
