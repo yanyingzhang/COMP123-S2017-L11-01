@@ -17,8 +17,7 @@ namespace COMP123_S2017_L11_01
         static void Main(string[] args)
         {
             Deck deck = new Deck();
-            Console.WriteLine("Original Deck    Number of Cards:" + deck.Count);
-            Console.WriteLine("===================================");
+
             Console.WriteLine(deck.ToString());
             Console.WriteLine();
             deck.Shuffle();

@@ -8,7 +8,7 @@ using System.Text;
  * Date: July 25, 2017
  * Description: This is the Deck class
  * It inherits from the List generic and uses Card as the base
- * Version: 0.3 -- Refactored to extend the CardList abstract class
+ * Version: 0.4 -- Refactored the ToString method to include a header
  */
 namespace COMP123_S2017_L11_01
 {
@@ -51,7 +51,11 @@ namespace COMP123_S2017_L11_01
         public override string ToString()
         {
             string outputString = "";
-            foreach(Card card in this)
+
+            outputString += "Deck contains   Number of Cards:" + this.Count + "\n";
+            outputString += "===================================\n";
+
+            foreach (Card card in this)
             {
                 outputString += "The " + card.Face + " of " + card.Suit + "\n";
             }
