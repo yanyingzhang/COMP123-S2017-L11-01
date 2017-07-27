@@ -8,7 +8,7 @@ using System.Text;
  * Date: July 25, 2017
  * Description: This is the Deck class
  * It inherits from the List generic and uses Card as the base
- * Version: 0.4 -- Refactored the ToString method to include a header
+ * Version: 0.5 -- Added the deal1 method
  */
 namespace COMP123_S2017_L11_01
 {
@@ -86,6 +86,17 @@ namespace COMP123_S2017_L11_01
                 //this[firstcard].face = tempcard.face;
                 //this[firstcard].suit = tempcard.suit;
             }
+        }
+
+        /// <summary>
+        /// this method returns the top card of the deck
+        /// </summary>
+        /// <returns></returns>
+        public Card Deal1()
+        {
+            Card topCard = this[0];
+            this.RemoveAt(0); // this removes the top card from the deck
+            return topCard;
         }
     }
 }
