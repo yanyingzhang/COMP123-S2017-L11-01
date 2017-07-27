@@ -96,6 +96,11 @@ namespace COMP123_S2017_L11_01
         {
             Card topCard = this[0];
             this.RemoveAt(0); // this removes the top card from the deck
+
+            // for testing only
+            Console.WriteLine("Dealt 1 card, size of deck will be: " + this.Count);
+
+
             return topCard;
         }
     }

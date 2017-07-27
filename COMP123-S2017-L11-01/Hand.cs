@@ -26,5 +26,18 @@ namespace COMP123_S2017_L11_01
         }
 
         // PUBLIC METHODS
+        public override string ToString()
+        {
+            string outputString = "";
+
+            outputString += "Deck contains   Number of Cards:" + this.Count + "\n";
+            outputString += "===================================\n";
+
+            foreach (Card card in this)
+            {
+                outputString += "The " + card.Face + " of " + card.Suit + "\n";
+            }
+            return outputString;
+        }
     }
 }

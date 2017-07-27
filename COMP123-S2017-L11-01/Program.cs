@@ -8,7 +8,7 @@ using System.Threading.Tasks;
  * Name: Yanying Zhang
  * Date: July 25, 2017
  * Description: This is a demo for lesson 11
- * Version: 0.1 -- create the project
+ * Version: 0.2 -- Tested the new Deck class
  */
 namespace COMP123_S2017_L11_01
 {
@@ -17,12 +17,18 @@ namespace COMP123_S2017_L11_01
         static void Main(string[] args)
         {
             Deck deck = new Deck();
+            Hand hand = new Hand();
 
             Console.WriteLine(deck.ToString());
             Console.WriteLine();
             deck.Shuffle();
             Console.WriteLine("Shuffled Deck    Number of Cards:" + deck.Count);
             Console.WriteLine("===================================");
+            Console.WriteLine(deck.ToString());
+
+            hand.Add(deck.Deal1());
+            Console.WriteLine(hand.ToString());
+            Console.WriteLine();
             Console.WriteLine(deck.ToString());
         }
     }
