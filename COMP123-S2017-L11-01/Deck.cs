@@ -8,7 +8,7 @@ using System.Text;
  * Date: July 25, 2017
  * Description: This is the Deck class
  * It inherits from the List generic and uses Card as the base
- * Version: 0.5 -- Added the deal1 method
+ * Version: 0.6 -- Added the deal5 method
  */
 namespace COMP123_S2017_L11_01
 {
@@ -102,6 +102,27 @@ namespace COMP123_S2017_L11_01
 
 
             return topCard;
+        }
+
+        /// <summary>
+        /// this is the Deal5 method
+        /// the top 5 cards will be removed from CardList
+        /// </summary>
+        /// <returns></returns>
+        public Hand Deal5()
+        {
+            Hand topFiveCards = new Hand();
+
+            for (int i = 0; i < 5; i++)
+            {
+                topFiveCards.Add(this[i]);
+            }
+            this.RemoveRange(0,5);
+
+            // calculate the total of rest of cards
+            Console.WriteLine("Dealt 5 card, size of deck will be: " + this.Count);
+
+            return topFiveCards;
         }
     }
 }

@@ -30,8 +30,8 @@ namespace COMP123_S2017_L11_01
         {
             string outputString = "";
 
-            outputString += "Deck contains   Number of Cards:" + this.Count + "\n";
-            outputString += "===================================\n";
+            outputString += "Hand contains   Number of Cards:" + this.Count + "\n";
+            outputString += "************************************\n";
 
             foreach (Card card in this)
             {
@@ -39,5 +39,7 @@ namespace COMP123_S2017_L11_01
             }
             return outputString;
         }
+
+        
     }
 }

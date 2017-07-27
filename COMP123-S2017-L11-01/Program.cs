@@ -30,6 +30,13 @@ namespace COMP123_S2017_L11_01
             Console.WriteLine(hand.ToString());
             Console.WriteLine();
             Console.WriteLine(deck.ToString());
+
+            // hand = deck.Dual5(); // moves the top 5 cards from the deck
+            Console.WriteLine(deck.Deal5());
+            Console.WriteLine();
+            Console.WriteLine(deck.ToString());
+            Console.WriteLine();
+            
         }
     }
 }
