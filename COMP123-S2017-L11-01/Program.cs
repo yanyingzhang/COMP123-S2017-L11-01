@@ -8,7 +8,7 @@ using System.Threading.Tasks;
  * Name: Yanying Zhang
  * Date: July 25, 2017
  * Description: This is a demo for lesson 11
- * Version: 0.2 -- Tested the new Deck class
+ * Version: 0.3 -- Tested the new deal5 method of Deck class
  */
 namespace COMP123_S2017_L11_01
 {
