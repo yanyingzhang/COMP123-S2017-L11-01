@@ -7,7 +7,7 @@ using System.Text;
  * Name: Yanying Zhang
  * Date: July 27, 2017
  * Description: This is the Hand class which inherited from CardList
- * Version: 0.3 -- Added HighestCards method
+ * Version: 0.4 -- Modified HighestCards method
  */
 namespace COMP123_S2017_L11_01
 {
@@ -40,20 +40,19 @@ namespace COMP123_S2017_L11_01
             return outputString;
         }
 
+        /// <summary>
+        /// this is the highestCards method
+        /// it consoles the hightest value of the cards
+        /// </summary>
+        /// <param name="hand"></param>
         public void HighestCards(Hand hand)
         {
-            var cards =
-                from card in hand
-                orderby card.Face descending
-                select card;
-
             var cardsFace =
                 from card in hand
                 orderby card.Face descending
                 select card.Face;
 
-
+            Console.WriteLine(cardsFace.Max());
         }
-        
     }
 }
