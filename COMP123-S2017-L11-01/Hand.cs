@@ -40,6 +40,20 @@ namespace COMP123_S2017_L11_01
             return outputString;
         }
 
+        public void HighestCards(Hand hand)
+        {
+            var cards =
+                from card in hand
+                orderby card.Face descending
+                select card;
+
+            var cardsFace =
+                from card in hand
+                orderby card.Face descending
+                select card.Face;
+
+
+        }
         
     }
 }

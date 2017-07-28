@@ -8,7 +8,7 @@ using System.Threading.Tasks;
  * Name: Yanying Zhang
  * Date: July 25, 2017
  * Description: This is a demo for lesson 11
- * Version: 0.3 -- Tested the new deal5 method of Deck class
+ * Version: 0.4 -- Modified program class
  */
 namespace COMP123_S2017_L11_01
 {
@@ -32,8 +32,12 @@ namespace COMP123_S2017_L11_01
             Console.WriteLine(deck.ToString());
 
             // hand = deck.Dual5(); // moves the top 5 cards from the deck
-            Console.WriteLine(deck.Deal5());
+            hand = deck.Deal5();
+            Console.WriteLine(hand.ToString());
             Console.WriteLine();
+            hand.HighestCards(hand);
+            
+
             Console.WriteLine(deck.ToString());
             Console.WriteLine();
             
